@@ -1,0 +1,30 @@
+<!--
+    Voronoi diagram
+    source:http://blog.ivank.net/voronoi-diagram-in-javascript.html
+    2-7-20
+-->
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, intial-scale=1.0">
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+    <link href = "/2020/voronoi/CSS/voronoi.css" rel = "stylesheet" type = "text/css">
+    <title>voronoi</title>
+
+    <script src="/2020/voronoi/JS/voronoi.js"></script>
+</head>
+<body onload="onLoad()">
+    <form style = "position:absolute; z-index:1; margin:10px">
+        <input type = "button" value = "Randomize" onClick = "randomPoints();" style = "width:100px; height:30px;"/>
+        <input type = "button" value = "Reset" onClick = "resetPoints();" style = "width:100px; height:30px;"/>
+        <input type="checkbox" onclick="voronoi = this.checked; redraw();" id="cvor"/>
+				<label for="cvor">Voronoi</label></br>
+		<input type="checkbox" onclick="delaunay = this.checked; redraw();" id="cdel"/>
+				<label for="cdel">Delaunay</label></br>
+    </form>
+    <canvas id="canvas"></canvas>
+</body>
+</html>
