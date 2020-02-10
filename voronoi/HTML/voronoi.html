@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<title>Voronoi diagram</title> 
+		<meta charset="utf-8" /> 
+		<style type="text/css">
+			body { margin: 0; padding: 0; height: 100%; font-size:20px;}
+		</style>
+		
+		<script type="text/javascript" src="/WorldCraft/voronoi/JS/voronoi.js"></script> 
+		
+		
+	</head> 
+	
+	<body onload="onLoad()" > 
+		<form style="position:absolute; z-index:1; margin:10px">
+			<input type="checkbox" checked="yes" onclick="voronoi = this.checked; redraw();" id="cvor"/>
+				<label for="cvor">Voronoi</label></br>
+			<input type="checkbox" onclick="delaunay = this.checked; redraw();" id="cdel"/>
+				<label for="cdel">Delaunay</label></br>
+			<input type="button" value="Reset" onclick="resetPoints();" style="width:100px; height:30px;"/>
+			<input type="button" value="Random" onclick="randPoints();" style="width:100px; height:30px;"/>
+		</form>
+		<canvas id="c"> </canvas>
+	</body> 
+</html>
