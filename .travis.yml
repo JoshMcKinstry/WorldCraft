@@ -1,2 +1,8 @@
 # Language spec
 language: node_js
+# Install latest stable version
+node_js:
+    - "node" 
+
+before_install:
+    - npm i -g npm@latest
