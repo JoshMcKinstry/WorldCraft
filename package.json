@@ -2,6 +2,10 @@
   "name": "worldcraft",
   "version": "0.0.0",
   "description": "A powerful fantasy map generation tool",
+  
+  "author": "",
+  "contributors": "",
+  "license": "ISC",
 
   "homepage": "https://github.com/JoshMcKinstry/WorldCraft#readme",
   "repository": {
@@ -9,14 +13,13 @@
     "url": "git+https://github.com/JoshMcKinstry/WorldCraft.git"},
   "bugs": {
     "url": "https://github.com/JoshMcKinstry/WorldCraft/issues"},
-  
-  "author": "",
-  "license": "ISC",
+    
 
   "main": "index.js",
-  
+
   "devDependencies": {
-    "mocha": "^7.0.1"},
+    "chai": "*",
+    "mocha": "*"},
   "scripts": {
     "test": "mocha"}
 }
