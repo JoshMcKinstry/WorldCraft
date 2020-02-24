@@ -6,8 +6,8 @@ node_js:
 addons:
     sonarcloud:
         organization: "$SONAR_ORGANIZATION"
-	token:
-  	    secure: "$SONAR_TOKEN"
+        token:
+            secure: "$SONAR_TOKEN"
           
 before_install:
 - npm i -g npm@latest
