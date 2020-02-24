@@ -1,7 +1,7 @@
 dist: trusty
 language: node_js
 node_js:
-    - node
+- node
 
 addons:
     sonarcloud:
@@ -10,8 +10,8 @@ addons:
   	    secure: "$SONAR_TOKEN"
           
 before_install:
-    - npm i -g npm@latest
+- npm i -g npm@latest
 
 
 script:
-    - sonar-scanner -Dsonar.verbose=true -X
+- sonar-scanner -Dsonar.verbose=true -X
