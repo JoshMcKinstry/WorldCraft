@@ -14,4 +14,4 @@ before_install:
 
 
 script:
-- sonar-scanner -Dsonar.verbose=true -X
+- sonar-scanner
