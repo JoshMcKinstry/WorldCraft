@@ -1,8 +1,17 @@
-# Language spec
+dist: trusty
 language: node_js
-# Install latest stable version
 node_js:
-    - "node" 
+    - node
 
+addons:
+    sonarcloud:
+        organization: "$SONAR_ORGANIZATION"
+	token:
+  	    secure: "$SONAR_TOKEN"
+          
 before_install:
     - npm i -g npm@latest
+
+
+script:
+    - sonar-scanner -Dsonar.verbose=true -X
