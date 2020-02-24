@@ -16,9 +16,10 @@
   "main": "index.js",
   "devDependencies": {
     "chai": "*",
-    "mocha": "^7.0.1"
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0"
   },
   "scripts": {
-    "test": "mocha --version && mocha"
+    "test": "mocha --version && nyc mocha"
   }
 }
