@@ -5,14 +5,16 @@ node_js:
 
 addons:
     sonarcloud:
-        organization: "$SONAR_ORGANIZATION"
+        organization: $SONAR_ORGANIZATION
         token:
-            secure: "$SONAR_TOKEN"
+            secure: $SONAR_TOKEN
           
 before_install:
 - npm i -g npm@latest
 
-
-script:
-- sonar-scanner
-- npm test
+jobs:
+    include:
+        - stage: "Tests and SonarCloud Analysis"
+          script:
+            - npm test
+            - sonar-scanner -Dsonar.projectKey=$SONAR_PROJECT_KEY
