@@ -1,4 +1,6 @@
 //source:https://www.youtube.com/watch?v=jv0rjLaVw5Q&t
+var d3 = require("d3");
+
 function draw(){	
 	'use strict';
 	var margin = {top:20, bottom:20, right:20, left:20},
