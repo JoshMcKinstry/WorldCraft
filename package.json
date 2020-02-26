@@ -20,7 +20,7 @@
     "nyc": "^15.0.0"
   },
   "scripts": {
-    "test": "mocha -v && nyc mocha",
-    "report": "nyc --reporter=lcov --reporter=text-lcov npm test"
+    "test": "nyc mocha",
+    "cov-report": "nyc report --reporter=lcov"
   }
 }
