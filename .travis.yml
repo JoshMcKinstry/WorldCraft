@@ -16,5 +16,6 @@ jobs:
     include:
         - stage: "Tests and SonarCloud Analysis"
           script:
-            - npm test
-            - sonar-scanner -Dsonar.projectKey=$SONAR_PROJECT_KEY
+            - npm run test
+            - npm run cov-report
+            - sonar-scanner -X -Dsonar.projectKey=$SONAR_PROJECT_KEY
