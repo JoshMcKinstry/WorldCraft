@@ -17,10 +17,24 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "^7.0.1",
+    "react-scripts": "3.4.0",
     "nyc": "^15.0.0"
   },
   "scripts": {
+    "start": "react-scripts start",
     "test": "nyc mocha",
     "cov-report": "nyc report --reporter=lcov"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
