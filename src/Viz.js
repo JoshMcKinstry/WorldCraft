@@ -8,7 +8,7 @@ const Viz = (props)=>{
     useEffect(()=>{
         d3.select('.viz > *').remove();
         draw(props)
-    }, [props.shapes.length])
+    }, [props.shapes.points])
     return <div className = "viz"/>
 }
 export default Viz

@@ -11,11 +11,11 @@ export default class Controller extends Component{
 
     onSubmit = (evt)=> {
         evt.preventDefault();
-        const newShape= {
+        const newPoint= {
             color:this.state.color,
             width:this.state.width,
         }
-        this.setState({toDraw: [...this.state.toDraw, newShape]})
+        this.setState({toDraw: [...this.state.toDraw, newPoint]})
     }
 
     onChange = (evt) => {
@@ -26,18 +26,18 @@ export default class Controller extends Component{
         return(
             <div className = "controller">
                 <form onSubmit = {this.onSubmit}>
-                    <label htmlFor = "colorSelect">Select a Color:</label>
+                    {/*<label htmlFor = "colorSelect">Select a Color:</label>
                     <select id = "ColorSelect" name = "color" onChange = {this.onChange} value = {this.state.color||"default"}>
                         <option disabled value = "default">choose</option>
                         <option value = "red">red</option>
                         <option value = "green">green</option>
                         <option value = "blue">blue</option>
-                    </select>
+                    </select>*/}
                     <label htmlFor = "pixelInput">Number of points:</label>
                     <input id = "pixelInput" name = "width" onChange = {this.onChange}/>
                     <button type = "submit" >draw!</button>
                 </form>
-                {this.state.toDraw.length? <Viz shapes = {this.state.toDraw}/> : null}
+                {<Viz shapes = {this.state.toDraw}/>}
             </div>
         )
     }

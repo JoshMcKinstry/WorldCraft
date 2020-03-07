@@ -11,8 +11,8 @@ const draw = (props) => {
     .attr('width',w)
     .attr('id','svg-viz')
 
-    const bubbles = props.shapes
-    let max = d3.max(bubbles)
+    const bubbles = props.shapes;
+    let max = d3.max(bubbles);
 
     const radiusScale = d3.scaleSqrt().domain([0,max]).range([0,max])
 
