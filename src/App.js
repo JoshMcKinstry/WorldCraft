@@ -1,17 +1,20 @@
 import React from 'react';
 import './App.css';
+import Controller from './Controller';
 
+class App extends React.Component {
 
-class App extends React.Component{
-  render(){
+ render() {
     return (
-      <div className="App">
-  
-        <form style={{marginTop:'450px'}}>
+      <div className="BubbleFun">
+     <h2 className ="title">Welcome to D3 fun baby!!!</h2>
 
-		    </form>
-		    <canvas id="c"> </canvas>
+     <Controller/>  
       </div>
+      /*<div className = "ScatterPlot">
+        <p>Here's a ScatterPlot now</p>
+
+      </div>*/
     );
   }
 }

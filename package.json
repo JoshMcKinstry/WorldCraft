@@ -5,7 +5,7 @@
   "author": "",
   "contributors": "",
   "license": "ISC",
-  "homepage": "https://github.com/JoshMcKinstry/WorldCraft#readme",
+  "homepage": "./",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JoshMcKinstry/WorldCraft.git"
@@ -14,11 +14,18 @@
     "url": "https://github.com/JoshMcKinstry/WorldCraft/issues"
   },
   "main": "index.js",
-  "devDependencies": {
+  "dependencies": {
     "chai": "*",
     "mocha": "^7.0.1",
     "react-scripts": "3.4.0",
-    "nyc": "^15.0.0"
+    "nyc": "^15.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "d3": "^5.15.0",
+    "d3-delaunay": "^5.2.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "scripts": {
     "start": "react-scripts start",
