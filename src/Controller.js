@@ -33,7 +33,7 @@ export default class Controller extends Component{
                         <option value = "green">green</option>
                         <option value = "blue">blue</option>
                     </select>
-                    <label htmlFor = "pixelInput">Size:</label>
+                    <label htmlFor = "pixelInput">Number of points:</label>
                     <input id = "pixelInput" name = "width" onChange = {this.onChange}/>
                     <button type = "submit" >draw!</button>
                 </form>

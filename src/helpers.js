@@ -12,16 +12,7 @@ const draw = (props) => {
     .attr('id','svg-viz')
 
     const bubbles = props.shapes
-    let min = bubbles[0].number
-    let max = bubbles[0].number
-    for(let i = 1; i<bubbles.length; i++){
-        if(bubbles[i].number>max){
-            max = bubbles[i].number
-        }
-        if(bubbles[i].number< min){
-            min = bubbles[i].number
-        }
-    }
+    let max = d3.max(bubbles)
 
     const radiusScale = d3.scaleSqrt().domain([0,max]).range([0,max])
 
@@ -33,13 +24,13 @@ const draw = (props) => {
 
     
     const circles = d3.select('#svg-viz').selectAll('circle')
-        .data(props.state)
+        .data(props.shapes)
         .enter()
         .append('svg:circle')
         .attr('r', d => d.width/2+"px")
         .style('fill', (d)=> d.color? d.color: 'purple')
 
-    simulation.nodes(props.shade)
+    simulation.nodes(props.shapes)
     .on('tick', ticked)
 
     function ticked(){

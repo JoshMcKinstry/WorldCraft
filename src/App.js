@@ -6,15 +6,10 @@ class App extends React.Component {
 
  render() {
     return (
-      <div className="BubbleFun">
-     <h2 className ="title">Welcome to D3 fun baby!!!</h2>
-
+      <div className="WorldCraft div">
+     <h2 className ="title">Welcome to WorldCraft Demo</h2>
      <Controller/>  
       </div>
-      /*<div className = "ScatterPlot">
-        <p>Here's a ScatterPlot now</p>
-
-      </div>*/
     );
   }
 }
