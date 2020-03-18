@@ -4,18 +4,16 @@ import Viz from './Viz.js';
 export default class Controller extends Component{
 
     state = {
-        color: "",
-        width:"",
+        points :"",
         toDraw:[],
     }
 
     onSubmit = (evt)=> {
         evt.preventDefault();
-        const newPoint= {
-            color:this.state.color,
-            width:this.state.width,
+        const newVoronoi= {
+            points:this.state.points,
         }
-        this.setState({toDraw: [...this.state.toDraw, newPoint]})
+        this.setState({toDraw: [...this.state.toDraw, newVoronoi]})
     }
 
     onChange = (evt) => {
@@ -24,21 +22,14 @@ export default class Controller extends Component{
 
     render(){
         return(
-            <div className = "controller">
-                <form onSubmit = {this.onSubmit}>
-                    {/*<label htmlFor = "colorSelect">Select a Color:</label>
-                    <select id = "ColorSelect" name = "color" onChange = {this.onChange} value = {this.state.color||"default"}>
-                        <option disabled value = "default">choose</option>
-                        <option value = "red">red</option>
-                        <option value = "green">green</option>
-                        <option value = "blue">blue</option>
-                    </select>*/}
-                    <label htmlFor = "pixelInput">Number of points:</label>
-                    <input id = "pixelInput" name = "width" onChange = {this.onChange}/>
-                    <button type = "submit" >draw!</button>
-                </form>
-                {<Viz shapes = {this.state.toDraw}/>}
-            </div>
+        <div className="controller">
+        <form onSubmit={this.onSubmit}>
+            <label htmlFor="pixelInput">how many points:</label>
+            <input id="pixelInput" name="width" onChange={this.onChange} />
+            <button type="submit">draw!</button>
+        </form>
+        { this.state.toDraw.length ? <Viz points={this.state.toDraw}/> : null}
+      </div>
         )
     }
 
