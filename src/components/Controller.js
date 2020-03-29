@@ -4,11 +4,11 @@ import Viz from './Viz.js';
 export default class Controller extends Component{
 
     state = {
-        points :"",
+        points: "",
         toDraw:[],
     }
 
-    onSubmit = (evt)=> {
+    onSubmit = evt => {
         evt.preventDefault();
         const newVoronoi= {
             points:this.state.points,
@@ -16,7 +16,7 @@ export default class Controller extends Component{
         this.setState({toDraw: [...this.state.toDraw, newVoronoi]})
     }
 
-    onChange = (evt) => {
+    onChange = evt => {
         this.setState({[evt.target.name]: evt.target.value})
     }
 
@@ -24,14 +24,12 @@ export default class Controller extends Component{
         return(
         <div className="controller">
         <form onSubmit={this.onSubmit}>
-            <label htmlFor="pixelInput">how many points:</label>
-            <input id="pixelInput" name="width" onChange={this.onChange} />
+            <label htmlFor="pixelInput">number of points:</label>
+            <input id="pixelInput" name="points" onChange={this.onChange} value = {this.state.points}/>
             <button type="submit">draw!</button>
         </form>
-        { this.state.toDraw.length ? <Viz points={this.state.toDraw}/> : null}
+        {<Viz voronoi={this.state.toDraw}/>}
       </div>
         )
     }
-
-
 }
