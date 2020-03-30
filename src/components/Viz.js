@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import draw from './Voronoi.js';
+import * as d3 from 'd3';
+
 //fence like component to create a border between React and D3
-export default class Viz extends Component{
-  componentDidMount(){
-    draw(this.props);
-  }
-  componentDidUpdate(prevProps){
-    draw(this.props);
-  }
-  render(){
-    return(
-      <div className = "Voronoi"/>
-    )
-  }
+//using React Hooks
+const Viz = (props) => {
+  useEffect(() => {
+    d3.select('.voronoi > *').remove();
+    draw(props)
+  }, [props.voronoi.length]); 
+  return <div className = 'voronoi'/>
 }
+
+export default Viz
