@@ -9,7 +9,7 @@ const draw = (props) =>{
 	const height = parseInt(h,10);
 	
 
-    const svg = d3.select('.voronoi').append('svg')
+   const svg= d3.select('.voronoi').append('svg')
       .attr('height', h)
       .attr('width', w)
 	  .attr('id', 'svg-viz');
@@ -18,10 +18,13 @@ const draw = (props) =>{
 	const num = parseInt(n,10);
 	const particles = Array.from({length: num}, () => [Math.random() * width, Math.random() * height]);
     const delaunay = Delaunay.from(particles);
-	const voronoi = delaunay.voronoi(particles);
-	
+	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
+	const polygons = d3.geom.voronoi(particles);
+	console.log(polygons);
+	console.log(voronoi.vectors);
+
 	//container that has voronoi cells to draw
-	const cells = svg.append("svg:g")
+	const cells = svg.append("svg-viz:g")
 		.attr("id", "cells")
     	.attr('fill','none')
     	.attr('stroke','#666')
@@ -31,7 +34,7 @@ const draw = (props) =>{
 	var g = cells.selectAll("g")
             .data(particles)
             .enter()
-			.append("svg:g");
+			.append("svg-viz:g");
 
 	//draw voronoi
 	g.append("svg:path")
@@ -40,7 +43,7 @@ const draw = (props) =>{
             //m - pen down
             //voronoi[i],join('L') - draw lines joining each point in voronoi[i]
             //z - pen up
-            return "M" + voronoi[i].join("L") + "Z";
+            return "M" + voronoi.vectors[i].join("L") + "Z";
         });
 			
 

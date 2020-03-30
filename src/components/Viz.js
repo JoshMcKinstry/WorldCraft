@@ -14,4 +14,4 @@ const Viz = (props) => {
   return <div className = 'voronoi'/>
 }
 
-export default Viz
+export default Viz;

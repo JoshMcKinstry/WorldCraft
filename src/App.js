@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Controller from './components/Controller.jsx';
+import Controller from './components/Controller.js';
 
 class App extends React.Component {
 
