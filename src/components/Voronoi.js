@@ -18,13 +18,13 @@ const draw = (props) =>{
 	const num = parseInt(n,10);
 	const particles = Array.from({length: num}, () => [Math.random() * width, Math.random() * height]);
     const delaunay = Delaunay.from(particles);
-	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
-	const polygons = d3.geom.voronoi(particles);
-	console.log(polygons);
-	console.log(voronoi.vectors);
+	var voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
+	console.log(voronoi);
+	const circumcenters = voronoi._circumcenters;
+	console.log(circumcenters);
 
 	//container that has voronoi cells to draw
-	const cells = svg.append("svg-viz:g")
+	/*const cells = svg.append("svg-viz:g")
 		.attr("id", "cells")
     	.attr('fill','none')
     	.attr('stroke','#666')
@@ -43,8 +43,17 @@ const draw = (props) =>{
             //m - pen down
             //voronoi[i],join('L') - draw lines joining each point in voronoi[i]
             //z - pen up
-            return "M" + voronoi.vectors[i].join("L") + "Z";
-        });
+            return "M" + circumcenters[i].join("L") + "Z";
+		});*/
+		
+	svg.selectAll(".polygon")
+    	.data(voronoi)
+    	.enter().append("path")
+  		.attr('class','polygons')
+    	.attr("d",function(d){return "M" + d.join("L") + "Z";})
+    	.datum(function(d, i) { return d.point; })
+    	.attr("class", function(d,i) { return "voronoi " + d.id; })
+    	.style("stroke", "#000");
 			
 
 };
