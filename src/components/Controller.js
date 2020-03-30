@@ -14,6 +14,8 @@ export default class Controller extends Component{
             points:this.state.points,
         }
         this.setState({toDraw: [...this.state.toDraw, newVoronoi]})
+        console.log(this.state.toDraw)
+        console.log(this.state.points)
     }
 
     onChange = evt => {

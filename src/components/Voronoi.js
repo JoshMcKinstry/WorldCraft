@@ -12,7 +12,6 @@ const draw = (props) =>{
 
     const n = props.voronoi;
     const particles = Array.from({length: n}, () => Math.random * w, Math.random * h);
-    console.log(particles);
     const delaunay = Delaunay.from(particles);
     const voronoi = delaunay.voronoi([0.5,0.5,w-0.5,h-0.5]);
     voronoi.render(particles);
