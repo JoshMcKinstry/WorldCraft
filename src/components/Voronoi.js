@@ -7,30 +7,33 @@ const draw = (props) =>{
 
 	const width = parseInt(w,10);
 	const height = parseInt(h,10);
-	
 
-   const svg= d3.select('.voronoi').append('svg')
+    d3.select('.voronoi').append('svg')
       .attr('height', h)
       .attr('width', w)
 	  .attr('id', 'svg-viz');
-
+	
 	const n = props.voronoi;
 	const num = parseInt(n,10);
 	const particles = Array.from({length: num}, () => [Math.random() * width, Math.random() * height]);
-    const delaunay = Delaunay.from(particles);
+	const delaunay = Delaunay.from(particles);
 	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
-	console.log(voronoi);
+	const simulation = d3.forceSimulation();
 
-	svg.selectAll(".polygon")
-    	.data(voronoi)
-    	.enter().append("path")
+	simulation.nodes(particles)
+		.on('tick',ticked);
+
+	const line = d3.select('#voronoi').selectAll('line')
+		.data(voronoi)
+		.attr("d",function(d){return "M" + d.join("L") + "Z";})
+    	.datum(function(d, i) { return d.point; })
+		.attr("class", function(d,i) { return "d " + d.id; })
+		.enter().append('svg:line')
   		.attr('class','svg-viz')
-    	.attr("voronoi",function(voronoi){return "M" + voronoi.join("L") + "Z";})
-    	.datum(function(voronoi, i) { return voronoi.point; })
-    	.attr("class", function(voronoi,i) { return "voronoi " + voronoi.id; })
 		.style("stroke", "#000");
 
-	
+	console.log(line);
+
 };
 
 export default draw;
