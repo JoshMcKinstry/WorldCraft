@@ -8,22 +8,19 @@ const draw = (props) =>{
 	const width = parseInt(w,10);
 	const height = parseInt(h,10);
 
-    d3.select('.voronoi').append('svg')
-      .attr('height', h)
-      .attr('width', w)
-	  .attr('id', 'svg-viz');
-	
 	const n = props.voronoi;
 	const num = parseInt(n,10);
 	const particles = Array.from({length: num}, () => [Math.random() * width, Math.random() * height]);
 	const delaunay = Delaunay.from(particles);
 	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
-	const simulation = d3.forceSimulation();
 
-	simulation.nodes(particles)
-		.on('tick',ticked);
+	d3.select('.voronoi').append('svg')
+      .attr('height', h)
+	  .attr('width', w)
+	  .data(voronoi)
+	  .attr('id', 'svg-viz');
 
-	const line = d3.select('#voronoi').selectAll('line')
+	const context = d3.select('.voronoi').selectAll('line')
 		.data(voronoi)
 		.attr("d",function(d){return "M" + d.join("L") + "Z";})
     	.datum(function(d, i) { return d.point; })
@@ -32,7 +29,7 @@ const draw = (props) =>{
   		.attr('class','svg-viz')
 		.style("stroke", "#000");
 
-	console.log(line);
+	console.log(context);
 
 };
 
