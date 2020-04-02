@@ -10,30 +10,27 @@ const draw = (props) =>{
 
 	const n = props.voronoi;
 	const num = parseInt(n,10);
-	const particles = Array.from({length: num}, () => [Math.random() * width, Math.random() * height]);
+	const particles = Array.from({length: num}, () => ["x: " + Math.random() * width, "y: " + Math.random() * height]);
 	const delaunay = Delaunay.from(particles);
 	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
 
-	d3.select('.voronoi').append('svg')
+	console.log(particles);
+	const canvas = d3.select('.voronoi').append('svg')
       .attr('height', h)
 	  .attr('width', w)
-	  .data(voronoi)
 	  .attr('id', 'svg-viz');
 
-	const circles = d3.select('.svg').selectAll('circle')
-		.data(particles)
-		.enter()
-		.append('svg:circle')
-		.attr('r' , "4px")
-		.style('fill', 'black')
-		.on('tick', ticked);
-		
-	function ticked(){
-		circles
-		.attr('cx', d => d.x)
-		.attr('cy', d => d.y);
+	const lineFunc = d3.line()
+		.x(function(d) {return d.x;})
+		.y(function(d) {return d.y;});
 
-	}
+	const line = canvas.append('path')
+		.attr('d', lineFunc(particles))
+		.attr("stroke", "black")
+		.attr("stroke-width", 1)
+		.attr("fill", "none");
+
+	console.log(line);
 
 };
 

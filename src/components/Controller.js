@@ -12,11 +12,11 @@ export default class Controller extends Component{
         const newVoronoi= {
             points:this.state.points,
         }
-        this.setState({newVoronoi});
+        this.setState({newVoronoi})
     }
 
     onChange = evt => {
-        this.setState({[evt.target.name]: evt.target.value})
+        this.setState({[evt.target.name]: evt.target.value});
     }
 
     render(){
