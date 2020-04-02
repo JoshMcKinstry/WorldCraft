@@ -20,16 +20,20 @@ const draw = (props) =>{
 	  .data(voronoi)
 	  .attr('id', 'svg-viz');
 
-	const context = d3.select('.voronoi').selectAll('line')
-		.data(voronoi)
-		.attr("d",function(d){return "M" + d.join("L") + "Z";})
-    	.datum(function(d, i) { return d.point; })
-		.attr("class", function(d,i) { return "d " + d.id; })
-		.enter().append('svg:line')
-  		.attr('class','svg-viz')
-		.style("stroke", "#000");
+	const circles = d3.select('.svg').selectAll('circle')
+		.data(particles)
+		.enter()
+		.append('svg:circle')
+		.attr('r' , "4px")
+		.style('fill', 'black')
+		.on('tick', ticked);
+		
+	function ticked(){
+		circles
+		.attr('cx', d => d.x)
+		.attr('cy', d => d.y);
 
-	console.log(context);
+	}
 
 };
 
