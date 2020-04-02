@@ -9,12 +9,19 @@ const draw = (props) =>{
 	const height = parseInt(h,10);
 
 	const n = props.voronoi;
-	const num = parseInt(n,10);
-	const particles = Array.from({length: num}, () => ["x: " + Math.random() * width, "y: " + Math.random() * height]);
+	const particles = Array.from({length:n}, () => [{x: Math.random() * width , y:Math.random() * height}]);
 	const delaunay = Delaunay.from(particles);
 	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
+	
+	var lineData = [{ "x": 1.5,   "y": 5},  { "x": 20,  "y": 20},
+                  { "x": 40,  "y": 10}, { "x": 60.5486345,  "y": 40},
+                  { "x": 80,  "y": 5},  { "x": 100, "y": 60.5648947}];
 
+				
+	console.log(lineData);
 	console.log(particles);
+	
+
 	const canvas = d3.select('.voronoi').append('svg')
       .attr('height', h)
 	  .attr('width', w)
@@ -29,8 +36,6 @@ const draw = (props) =>{
 		.attr("stroke", "black")
 		.attr("stroke-width", 1)
 		.attr("fill", "none");
-
-	console.log(line);
 
 };
 
