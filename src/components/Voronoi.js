@@ -14,34 +14,20 @@ const draw = (props) =>{
 	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
 
 	const canvas = d3.select('.voronoi').append('canvas')
-      .attr('height', h)
-	  .attr('width', w)
-	  .attr('id', 'canvas-viz');
+      .attr('height', height)
+	  .attr('width', width)
+	  .attr('id', 'canvas');
 
 	const svg = document.getElementById("voronoi");
 
 	const context = svg.getContext('2d');
 
-	console.log(context);
-
 	context.clearRect(0,0,width,height);
+	
 	context.beginPath();
 	voronoi.render(context);
     context.strokeStyle = "#ccc";
 	context.stroke();
-	
-	
-	/*const lineFunc = d3.line()
-		.x(function(d) {return d.x;})
-		.y(function(d) {return d.y;});*/
-
-	const path = canvas.append('path')
-		.data(particles)
-		.attr("stroke", "black")
-		.attr("stroke-width", 1)
-		.attr("fill", "none");
-
-
 };
 
 export default draw;
