@@ -13,21 +13,20 @@ const draw = (props) =>{
 	const delaunay = Delaunay.from(particles);
 	const voronoi = delaunay.voronoi([0.5,0.5,width-0.5,height-0.5]);
 
-	const canvas = d3.select('.voronoi').append('canvas')
-      .attr('height', height)
-	  .attr('width', width)
-	  .attr('id', 'canvas');
-
+	//canvas element
 	const svg = document.getElementById("voronoi");
+	svg.width = w;
+	svg.height = h;
+
 
 	const context = svg.getContext('2d');
 
-	context.clearRect(0,0,width,height);
-	
+	context.clearRect(0,0,width,height); //clear previous image
 	context.beginPath();
 	voronoi.render(context);
-    context.strokeStyle = "#ccc";
-	context.stroke();
+    context.strokeStyle = "#000";
+	context.stroke(); //final stroke to finish drawing voronoi
+	
 };
 
 export default draw;
