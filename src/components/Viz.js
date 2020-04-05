@@ -11,7 +11,10 @@ const Viz = (props) => {
     draw(props);
   }, [props.voronoi.length]); 
 
-  return <div className = 'voronoi'/>
+  return <div>
+    <canvas id = "voronoi">
+    </canvas>
+  </div>
 }
 
 export default Viz;
