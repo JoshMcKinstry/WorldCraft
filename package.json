@@ -15,23 +15,24 @@
   },
   "main": "index.js",
   "dependencies": {
-    "chai": "*",
-    "mocha": "^7.0.1",
-    "react-scripts": "3.4.0",
-    "nyc": "^15.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "chai": "*",
     "d3": "^5.15.0",
     "d3-delaunay": "^5.2.1",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "nyc mocha",
-    "cov-report": "nyc report --reporter=lcov"
+    "cov-report": "nyc report --reporter=lcov",
+    "figmagic": "node --experimental-modules ./node_modules/figmagic/index.mjs"
   },
   "browserslist": {
     "production": [
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "figmagic": "^3.0.3"
   }
 }

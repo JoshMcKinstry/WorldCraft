@@ -5,14 +5,16 @@ export default class Controller extends Component{
 
     state = {
         points:"",
+        toDraw:[],
     }
 
     onSubmit = evt => {
         evt.preventDefault();
         const newVoronoi= {
-            points:this.state.points,
+            points:this.state.points
         }
-        this.setState({newVoronoi})
+        this.setState({toDraw : [...this.state.toDraw, newVoronoi]});
+
     }
 
     onChange = evt => {
@@ -22,12 +24,12 @@ export default class Controller extends Component{
     render(){
         return(
         <div className="controller">
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} name = "voronoi" value = {this.state.points} >
             <label htmlFor="pixelInput">number of points:</label>
             <input id="pixelInput" name="points" onChange={this.onChange} value = {this.state.points}/>
-            <button type="submit">draw!</button>
+            <button name = "draw_button" type="submit" value = "Submit">draw!</button>
         </form>
-        {<Viz voronoi={this.state.points}/>}
+        { this.state.toDraw.length ? <Viz voronoi={this.state.toDraw}/> : null}
       </div>
         )
     }
