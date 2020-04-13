@@ -1,0 +1,21 @@
+dist: trusty
+language: node_js
+node_js:
+- node
+
+addons:
+    sonarcloud:
+        organization: $SONAR_ORGANIZATION
+        token:
+            secure: $SONAR_TOKEN
+          
+before_install:
+- npm i -g npm@latest
+
+jobs:
+    include:
+        - stage: "Tests and SonarCloud Analysis"
+          script:
+            - npm run test
+            - npm run cov-report
+            - sonar-scanner -X -Dsonar.projectKey=$SONAR_PROJECT_KEY

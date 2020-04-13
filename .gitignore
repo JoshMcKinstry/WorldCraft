@@ -1,2 +1,6 @@
 # Ignore VSCode workspaces
 *workspace
+
+node_modules/
+.nyc_output/
+coverage/
