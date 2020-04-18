@@ -21,7 +21,7 @@
     "test": "nyc mocha",
     "cov-report": "nyc report --reporter=lcov",
     "lint": "eslint --ext .js -f table src/**/*.js",
-    "lint-detail": "eslint --ext .js -f codeframe src/**"
+    "lint-detail": "eslint --ext .js -f codeframe src/**/*.js"
   },
   "browserslist": {
     "production": [
