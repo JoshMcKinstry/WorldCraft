@@ -14,7 +14,7 @@ addons:
 
 jobs:
   include:
-    - stage: "Tests and Analysis"
+    -stage: "Tests and Analysis"
     script:
       - npm run test
       - npm run cov-report
