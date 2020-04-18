@@ -20,8 +20,8 @@
     "build": "react-scripts build",
     "test": "nyc mocha",
     "cov-report": "nyc report --reporter=lcov",
-    "lint": "eslint --ext .js -f table src/**/*.js",
-    "lint-detail": "eslint --ext .js -f codeframe src/**/*.js"
+    "lint": "eslint --ext .js -f table src/components/*.js",
+    "lint-detail": "eslint --ext .js -f codeframe src/components/*.js"
   },
   "browserslist": {
     "production": [
