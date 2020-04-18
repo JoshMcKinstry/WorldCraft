@@ -10,7 +10,7 @@ addons:
   sonarcloud:
     organization: 'cartographers-2020'
     token:
-      secure: SONAR_TOKEN
+      secure: '$SONAR_TOKEN'
 
 jobs:
   include:
