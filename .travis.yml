@@ -6,10 +6,17 @@ node_js:
 before_install:
 - npm i -g npm@latest
 
+addons:
+  sonarcloud:
+    organization: 'cartographers-2020'
+    token:
+      secure: SONAR_TOKEN
+
 jobs:
-    include:
-        - stage: "Tests and Analysis"
-          script:
-            - npm run test
-            - npm run cov-report
-            - npm run lint-detail -s
+  include:
+    - stage: "Tests and Analysis"
+    script:
+      - npm run test
+      - npm run cov-report
+      - npm run lint -s
+      - sonar-scanner
