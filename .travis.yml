@@ -21,5 +21,5 @@ jobs:
       - npm run test
       - npm run cov-report
       - npm run lint -s
-      - sonar-scanner -X -Dsonar.branch.name=$TRAVIS_BRANCH -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=JoshMcKinstry_WorldCraft -Dsonar.branch.target=dev
+      - sonar-scanner -X -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=JoshMcKinstry_WorldCraft
 
