@@ -9,8 +9,7 @@ before_install:
 addons:
   sonarcloud:
     organization: 'cartographers-2020'
-    token:
-      secure: $SONAR_TOKEN
+    token: $SONAR_TOKEN
 
 jobs:
   include:
