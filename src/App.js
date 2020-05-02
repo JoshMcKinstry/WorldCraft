@@ -1,15 +1,33 @@
 import React from 'react';
-import './App.css';
-import Controller from './components/Controller.js';
+import Button from './components/Button';
+import Controller from './components/Controller';
+import './components/css/App.css';
 
 class App extends React.Component {
 
- render() {
+  constructor(props){
+    super(props)
+    this.state = {HomeState:true}
+  }
+
+  newMapClicked = () =>{
+    this.setState({
+      ...this.state,
+      HomeState:false,
+      ControllerState:true
+    })
+  }
+
+ render() { 
     return (
-      <div className="WorldCraft div">
-     <h2 className ="title">Welcome to WorldCraft</h2>
-     <Controller/>  
-      </div>
+        <div className="LandingPage">
+        <h2 type ="title" className ="title">Welcome to WorldCraft</h2>
+        {this.state.HomeState && <Button
+        label = "New Map" 
+        handleClick = {this.newMapClicked}
+        ></Button>}
+        {this.state.ControllerState && <Controller/>}
+        </div>
     );
   }
 }
