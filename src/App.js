@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from './components/Button';
 import Controller from './components/Controller';
-import './components/css/App.css';
+import './App.css';
+
 
 class App extends React.Component {
 
@@ -21,7 +22,7 @@ class App extends React.Component {
  render() { 
     return (
         <div className="LandingPage">
-        <h2 type ="title" className ="title">Welcome to WorldCraft</h2>
+        <h2 type ="title" className ="title">WorldCraft</h2>
         {this.state.HomeState && <Button
         label = "New Map" 
         handleClick = {this.newMapClicked}

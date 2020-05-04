@@ -1,9 +1,12 @@
 .button{
-    width: 100px;
-    height: 25px;
+    width: 120px;
+    height: 35px;
+    size:16px;
     text-align: center;
     position:0;
     bottom: 0;
     left:0;
     font-size: medium;
+    background-color: #ffad31;
+    stroke-width: 4;
 }
