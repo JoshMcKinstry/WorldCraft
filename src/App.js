@@ -1,32 +1,40 @@
 import React from 'react';
 import Button from './components/Button';
 import Controller from './components/Controller';
-import './App.css';
+import logo from './WorldCraft.png';
+import styled from 'styled-components';
+import "./App.css";
 
-
+const Image = styled.img`
+    top:50%;
+    left:50%;
+    margin-top:-100px;
+    margin-left:425px;
+  `;
 class App extends React.Component {
-
   constructor(props){
-    super(props)
-    this.state = {HomeState:true}
+    super(props);
+    this.displayData = [];
+
+    this.state = {
+      HomeState:true,
+    };
   }
 
   newMapClicked = () =>{
     this.setState({
       ...this.state,
       HomeState:false,
-      ControllerState:true
+      ControllerState:true,
     })
-  }
+  };
+
 
  render() { 
     return (
-        <div className="LandingPage">
-        <h2 type ="title" className ="title">WorldCraft</h2>
-        {this.state.HomeState && <Button
-        label = "New Map" 
-        handleClick = {this.newMapClicked}
-        ></Button>}
+      <div className="LandingPage">
+        {this.state.HomeState &&<Image class = "logo" src = {logo}></Image>}
+        {this.state.HomeState && <Button className = "newMapButton" label = "New Map" handleClick = {this.newMapClicked}></Button>}
         {this.state.ControllerState && <Controller/>}
         </div>
     );

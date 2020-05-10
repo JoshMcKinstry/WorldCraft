@@ -1,17 +1,8 @@
-.title{
-    font-size:large;
-    justify-content: center;
-}
-
-.App{
-    text-align: center;
+.LandingPage{
     background-color: #5BC3FF;
 }
 
-.h2{
-    text-align: center;
-}
-
-.div{
-    background-color: #5BC3FF;
+.newMapButton{
+    top:50%;
+    left:50%;
 }

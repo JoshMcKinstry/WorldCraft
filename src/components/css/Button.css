@@ -1,12 +1,16 @@
 .button{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top: 280px;
+    margin-left:-65px;
     width: 120px;
     height: 35px;
     size:16px;
     text-align: center;
-    position:0;
-    bottom: 0;
-    left:0;
     font-size: medium;
     background-color: #ffad31;
+    color:black;
     stroke-width: 4;
+    padding: 7px 10px;
 }
