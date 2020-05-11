@@ -39,6 +39,7 @@ There are a number of scripts available to run on the terminal to interact with 
 
 ### Who can use WorldCraft?
 WorldCraft is for everyone! Whether you are just looking to build a fantasy world you've been imagining in your head or you are an experienced world-builder looking for the best tool for making an interconnected world, this is the place for you. The services of WorldCraft will be useful for
+
     - Fantasy Authors
     - Dungeon Masters
     - Game Developers
@@ -50,6 +51,7 @@ WorldCraft is still in very early development stages. Passion project turned int
 
 ### Where are we going?
 Let me just share some of the goals we aspire to push with this project.
+
     - To build an online community hub where you can create maps, save maps to the cloud on your account and share your maps with the community or browse other incredible maps made by talented people.
     - Use built in styles on your maps when you generate or draw elements such as mountains, rivers and cities. Or download and use custom styles that you make yourself or get from other talented artists online in the community.
     - Build a desktop and mobile companion app to take WorldCraft with you wherever you go to stay updated with the incredible world-building community.
