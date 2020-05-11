@@ -3,11 +3,12 @@
 # Welcome to WorldCraft!
 
 ### What is WorldCraft?
-- WorldCraft is a fantasy world building tool, envisioned to be the first of its kind. Not only with the ability to create multiple fantasy maps that link together to form a large expansive world using a powerful map editor, WorldCraft will be a hub for a community of fantasy lovers, map-makers and world-builders to design and share unique and inspired fantasy worlds. WorldCraft is designed to be easy to use and accessible to master and novice world-builders alike. 
+WorldCraft is a fantasy world building tool, envisioned to be the first of its kind. Not only with the ability to create multiple fantasy maps that link together to form a large expansive world using a powerful map editor, WorldCraft will be a hub for a community of fantasy lovers, map-makers and world-builders to design and share unique and inspired fantasy worlds. WorldCraft is designed to be easy to use and accessible to master and novice world-builders alike. 
 
 WorldCraft is a full-stack JavaScript project, with the back end using NodeJS and the front end utilizing ReactJS.
 
 NodeJS : https://nodejs.org/en/
+
 ReactJS : https://reactjs.org/
 
 For a look at what else we use to develop WorldCraft, take a look at the dependencies in package.json.
@@ -37,7 +38,7 @@ There are a number of scripts available to run on the terminal to interact with 
  - npm run lint-detail
 
 ### Who can use WorldCraft?
-- WorldCraft is for everyone! Whether you are just looking to build a fantasy world you've been imagining in your head or you are an experienced world-builder looking for the best tool for making an interconnected world, this is the place for you. The services of WorldCraft will be useful for
+WorldCraft is for everyone! Whether you are just looking to build a fantasy world you've been imagining in your head or you are an experienced world-builder looking for the best tool for making an interconnected world, this is the place for you. The services of WorldCraft will be useful for
     - Fantasy Authors
     - Dungeon Masters
     - Game Developers
@@ -45,10 +46,10 @@ There are a number of scripts available to run on the terminal to interact with 
 As aspiring world-builders ourselves we wanted to build a state of the art application for creating interconnected maps to form larger worlds. We want this to be the application built for world-builders by world-builders.
 
 ### Where are we now?
-- WorldCraft is still in very early development stages. Passion project turned into college senior project, the project is in its infancy, but there is nowhere to go but up. We're dreaming big to bring the best application imaginable to fantasy lovers everywhere. For now, what we have is a the start to an algorithm to generate randomized fantasy maps. We have also done a lot of design work on the side and research into the best way to build our application. We have designed a unique data structure to best contain all of the data that eventually, will relay all of the information about the maps you create in a seamless, easy-to-use format. So while we have made little progress, there is nowhere to go but up.
+WorldCraft is still in very early development stages. Passion project turned into college senior project, the project is in its infancy, but there is nowhere to go but up. We're dreaming big to bring the best application imaginable to fantasy lovers everywhere. For now, what we have is a the start to an algorithm to generate randomized fantasy maps. We have also done a lot of design work on the side and research into the best way to build our application. We have designed a unique data structure to best contain all of the data that eventually, will relay all of the information about the maps you create in a seamless, easy-to-use format. So while we have made little progress, there is nowhere to go but up.
 
 ### Where are we going?
-Let me just share some of the goals we aspire to push with this project...
+Let me just share some of the goals we aspire to push with this project.
     - To build an online community hub where you can create maps, save maps to the cloud on your account and share your maps with the community or browse other incredible maps made by talented people.
     - Use built in styles on your maps when you generate or draw elements such as mountains, rivers and cities. Or download and use custom styles that you make yourself or get from other talented artists online in the community.
     - Build a desktop and mobile companion app to take WorldCraft with you wherever you go to stay updated with the incredible world-building community.
