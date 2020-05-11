@@ -1,1 +1,1 @@
-![WorldCraft Logo}(/webassets/logo.png)
+![WorldCraft Logo](/webassets/logo.png)
