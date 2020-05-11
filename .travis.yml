@@ -3,19 +3,23 @@ language: node_js
 node_js:
 - node
 
-addons:
-    sonarcloud:
-        organization: $SONAR_ORGANIZATION
-        token:
-            secure: $SONAR_TOKEN
-          
 before_install:
 - npm i -g npm@latest
 
+addons:
+  sonarcloud:
+    organization: 'cartographers-2020'
+    token: $SONAR_TOKEN
+
+git:
+  depth: false
+
 jobs:
-    include:
-        - stage: "Tests and SonarCloud Analysis"
-          script:
-            - npm run test
-            - npm run cov-report
-            - sonar-scanner -X -Dsonar.projectKey=$SONAR_PROJECT_KEY
+  include:
+    -stage: "Tests and Analysis"
+    script:
+      - npm run test
+      - npm run cov-report
+      - npm run lint -s
+      - sonar-scanner -X -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=JoshMcKinstry_WorldCraft
+
