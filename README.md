@@ -40,9 +40,9 @@ There are a number of scripts available to run on the terminal to interact with 
 ### Who can use WorldCraft?
 WorldCraft is for everyone! Whether you are just looking to build a fantasy world you've been imagining in your head or you are an experienced world-builder looking for the best tool for making an interconnected world, this is the place for you. The services of WorldCraft will be useful for
 
-    - Fantasy Authors
-    - Dungeon Masters
-    - Game Developers
+ - Fantasy Authors
+ - Dungeon Masters
+ - Game Developers
 
 As aspiring world-builders ourselves we wanted to build a state of the art application for creating interconnected maps to form larger worlds. We want this to be the application built for world-builders by world-builders.
 
@@ -52,13 +52,13 @@ WorldCraft is still in very early development stages. Passion project turned int
 ### Where are we going?
 Let me just share some of the goals we aspire to push with this project.
 
-    - To build an online community hub where you can create maps, save maps to the cloud on your account and share your maps with the community or browse other incredible maps made by talented people.
-    - Use built in styles on your maps when you generate or draw elements such as mountains, rivers and cities. Or download and use custom styles that you make yourself or get from other talented artists online in the community.
-    - Build a desktop and mobile companion app to take WorldCraft with you wherever you go to stay updated with the incredible world-building community.
-    - Smart algorithms to handle the generation and placement of elements to create seemingly hand-drawn maps just by submitting a few design preferences in case you want a random map that looks great on the fly.
-    - The ability to use a myriad of input devices such as drawing tablets for that increased precision in your designs.
-    - Unique and custom hand-drawn designs for every map element imaginable.
-    - A great free experience accessible to everybody!
+ - To build an online community hub where you can create maps, save maps to the cloud on your account and share your maps with the community or browse other incredible maps made by talented people.
+ - Use built in styles on your maps when you generate or draw elements such as mountains, rivers and cities. Or download and use custom styles that you make yourself or get from other talented artists online in the community.
+ - Build a desktop and mobile companion app to take WorldCraft with you wherever you go to stay updated with the incredible world-building community.
+ - Smart algorithms to handle the generation and placement of elements to create seemingly hand-drawn maps just by submitting a few design preferences in case you want a random map that looks great on the fly.
+ - The ability to use a myriad of input devices such as drawing tablets for that increased precision in your designs.
+ - Unique and custom hand-drawn designs for every map element imaginable.
+ - A great free experience accessible to everybody!
 
 ### What are we learning? 
 We are learning a great deal about JavaScript in this project as well as tools such as ReactJS. By far, one of the most valuable experiences of having this as a senior project has been being able to develop a full-stack application. The opportunity to work in a team has also proven to be invaluable.
